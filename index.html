@@ -33,7 +33,27 @@
     <div class="mySlides fade">
         <img src="assets/images/fig-board.jpg" alt="A charcuterie board with fig, cheese, etc.">
     </div>
+    <div class="mySlides fade">
+        <img src="assets/images/muesli.jpg" alt="A cup of muesli garnished with grains">
+    </div>
+    <div class="mySlides fade">
+        <img src="assets/images/vine-grapes.jpg" alt="Green grapes on the vine">
+    </div>
+    <div class="mySlides fade">
+        <img src="assets/images/tteokbokki.jpg" alt="Plated tteokbokki">
+    </div>
+    <div class="mySlides fade">
+        <img src="assets/images/dumplings.jpg" alt="Plated steamed dumplings">
+    </div>
+    <div class="mySlides fade">
+        <img src="assets/images/curry.jpg" alt="Buffet of curries">
+    </div>
 </div>
+
+<!-- Scrolling Blog Section -->
+<section id="scrolling-blog" class="scrolling-blog">
+    <p>Dog-Eat-Dog: A Diary of Recipes Generated with Free AI</p>
+</section>
 
     <!-- Main Content Section -->
     <div class="content">
@@ -47,7 +67,7 @@
                 <li><a href="dry-goods.html">Dry Goods</a></li>
                 <li><a href="spices.html">Spices and Seasonings</a></li>
                 <li><a href="canned-tomatoes.html">Canned Tomatoes</a></li>
-                <li><a href="nut-butters.html>Nut Butters</a></li>
+                <li><a href="nut-butters.html">Nut Butters</a></li>
                 <li><a href="grains.html">Grains</a></li>
                 <li><a href="vinegars.html">Vinegars</a></li>
                 <li><a href="cheese.html">Cheese</a></li>
@@ -55,14 +75,42 @@
             </ul>
         </aside>
 
-         <!-- Recipe List Section -->
-         <section id="recipe-list">
+        <!-- Hero Section (Welcome message) -->
+        <section id="hero">
+            <h2>Welcome to User Recipes</h2>
+            <p>Let AI optimize your recipes with ingredients you already have!</p>
+        </section>
+
+        <!-- Recipe List Section -->
+        <section id="recipe-list">
             <h2>Recipe Rolodex</h2>
             <!-- Recipe Articles here -->
-            <ul>
-                <li><a href="banana-bread.html">Bananas Foster Banana Bread</a></li>                
+            <ul id="recipe-items"> <!-- Add id="recipe-items" here -->
+                <li><a href="banana-bread.html">Tropical Bananas Foster Banana Bread</a></li>
+                <li><a href="sundubu-kimchi-jjigae.html">Sundubu Kimchi Jjigae</a></li>                
             </ul>
         </section>
+
+        <script>
+            // Function to sort the list alphabetically
+            function sortRecipeList() {
+                const ul = document.getElementById('recipe-items');  // Get the <ul> element
+                const listItems = Array.from(ul.getElementsByTagName('li'));  // Convert <li> elements to an array
+    
+                // Sort the list items alphabetically by the text inside the <a> tags
+                listItems.sort((a, b) => {
+                    const textA = a.textContent.trim().toLowerCase();
+                    const textB = b.textContent.trim().toLowerCase();
+                    return textA.localeCompare(textB);
+                });
+    
+                // Re-attach sorted <li> items to the <ul> in order
+                listItems.forEach(item => ul.appendChild(item));
+            }
+    
+            // Call the function to sort the list when the page loads
+            window.onload = sortRecipeList;
+        </script>
     </div>
 
     <!-- Footer -->

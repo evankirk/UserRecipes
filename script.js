@@ -1,36 +1,31 @@
-<!-- Slideshow Section -->
-<div class="slideshow-container">
-    <div class="mySlides fade">
-        <img src="assets/images/sourdough-recipe.jpg" alt="Cookbook recipe for sourdough starter">
-    </div>
-    <!-- other slides here -->
-</div>
-
-<script>
-// JavaScript code from earlier (showSlides and shuffleArray functions)
 let slideIndex = 0;
+let slidesArray = [];
 
 function showSlides() {
     let slides = document.getElementsByClassName("mySlides");
-    let slidesArray = Array.from(slides); // Convert HTMLCollection to an array
-
+    console.log(slides); // Logs all slide elements to the console
+    
+    // Convert HTMLCollection to an array
+    slidesArray = Array.from(slides);
+    
     // Shuffle the slides array
-    shuffleArray(slidesArray);
-
-    // Hide all slides
-    slidesArray.forEach(slide => {
-        slide.style.display = "none";
-    });
-
+    shuffleSlides(slidesArray);
+    
+    // Hide all slides initially
+    for (let i = 0; i < slidesArray.length; i++) {
+        slidesArray[i].style.display = "none";
+    }
+    
     slideIndex++;
-    if (slideIndex > slidesArray.length) { slideIndex = 1 } // Loop to the first slide
-    slidesArray[slideIndex - 1].style.display = "block"; // Show the current slide
-
+    if (slideIndex > slidesArray.length) { slideIndex = 1; } // Loop to the first slide
+    
+    // Show the current slide
+    slidesArray[slideIndex - 1].style.display = "block"; 
     setTimeout(showSlides, 3000); // Change slide every 3 seconds
 }
 
-// Shuffle function to randomize the array
-function shuffleArray(array) {
+// Shuffle the slides randomly
+function shuffleSlides(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]]; // Swap elements
@@ -39,4 +34,3 @@ function shuffleArray(array) {
 
 // Initialize the slideshow
 showSlides();
-</script>
