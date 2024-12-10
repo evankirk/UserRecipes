@@ -1,19 +1,16 @@
+// Slideshow functionality
 let slideIndex = 0;
 
 function showSlides() {
     let slides = document.getElementsByClassName("mySlides");
-
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Hide all images
+        slides[i].style.display = "none";  // Hide all slides
     }
-
     slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1; // If we reach the end, start over
-    }
-
-    slides[slideIndex - 1].style.display = "block"; // Show current slide
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
+    if (slideIndex > slides.length) { slideIndex = 1 }  // Loop to the first slide
+    slides[slideIndex - 1].style.display = "block";  // Show the current slide
+    setTimeout(showSlides, 3000);  // Change slide every 3 seconds
 }
 
-showSlides(); // Start the slideshow when the page loads
+// Initialize the slideshow
+showSlides();

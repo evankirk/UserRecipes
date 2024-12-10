@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Recipes</title>
-    <!-- You can link to your CSS here -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+    <!-- Header -->
     <header>
-        <h1>Welcome to User Recipes</h1>
-        <!-- Navigation bar or other header content can go here -->
+        <h1>User Recipes</h1>
     </header>
 
-    <main>
-        <section id="recipe-list">
-            <h2>Recipes</h2>
-            <!-- Your recipe list or content will go here -->
-        </section>
-    </main>
+    <!-- Slideshow Section -->
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="assets/images/sourdough-recipe.jpg" alt="Cookbook recipe for sourdough starter">
+    </div>
+    <div class="mySlides fade">
+        <img src="assets/images/shrimp-salad.jpg" alt="Shrimp salad garnished with egg, tomato, and bread">
+    </div>
+    <div class="mySlides fade">
+        <img src="assets/images/roast-pork.jpg" alt="Scored roasted pork">
+    </div>
+    <div class="mySlides fade">
+        <img src="assets/images/chicken-olives-tomato.jpg" alt="Chicken roasted with olives and tomatoes">
+    </div>
+</div>
 
+    <!-- Main Content Section -->
+    <div class="content">
+        <!-- Sidebar for Pantry Essentials -->
+        <aside>
+            <h2>Browse by Pantry Essential</h2>
+            <ul>
+                <li><a href="#citrus">Citrus</a></li>
+                <li><a href="#canned-fish">Canned Fish</a></li>
+                <li><a href="#asian-market-essentials">Asian Market Essentials</a></li>
+                <li><a href="#dry-goods">Dry Goods</a></li>
+                <li><a href="#spices">Spices and Seasonings</a></li>
+                <li><a href="#canned-tomatoes">Canned Tomatoes</a></li>
+                <li><a href="#nut-butters">Nut Butters</a></li>
+                <li><a href="#grains">Grains</a></li>
+                <li><a href="#vinegars">Vinegars</a></li>
+                <li><a href="#cheese">Cheese</a></li>
+                <li><a href="#olives-pickles">Olives & Pickles</a></li>
+            </ul>
+        </aside>
+
+        <!-- Recipe List Section -->
+        <section id="recipe-list">
+            <h2>All Recipes</h2>
+            <!-- Recipe Articles here -->
+        </section>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 User Recipes. All Rights Reserved.</p>
+        <p>Prepared with love by User</p>
     </footer>
 
-    <!-- You can link to your JavaScript here -->
     <script src="script.js"></script>
 </body>
-
 </html>
